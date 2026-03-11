@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر شحن الألعاب - تونس</title>
+    <style>
+        :root { --main-color: #ff4b2b; --bg-color: #121212; }
+        body { font-family: Arial, sans-serif; background-color: var(--bg-color); color: white; margin: 0; padding: 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .product-card { background: #1e1e1e; border: 1px solid #333; border-radius: 15px; padding: 15px; transition: 0.3s; }
+        .product-card:hover { border-color: var(--main-color); transform: scale(1.02); }
+        .product-card img { width: 100%; border-radius: 10px; }
+        .price { font-size: 20px; color: #4caf50; font-weight: bold; margin: 10px 0; }
+        .btn-order { background: var(--main-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <h1>🎮 متجر الشحن السريع في تونس 🇹🇳</h1>
+    <p>شحن فوري - دفع عبر D17 أو تحويل بنكي</p>
+
+    <div class="grid">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x120?text=Free+Fire" alt="Free Fire">
+            <h3>100 جوهرة فري فاير</h3>
+            <div class="price">4.500 DT</div>
+            <a href="https://wa.me/216XXXXXXXX?text=أريد شراء 100 جوهرة فري فاير" class="btn-order">اطلب عبر واتساب</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x120?text=Netflix" alt="Netflix">
+            <h3>اشتراك نتفلكس شهر</h3>
+            <div class="price">15.000 DT</div>
+            <a href="https://wa.me/216XXXXXXXX?text=أريد اشتراك نتفلكس" class="btn-order">اطلب عبر واتساب</a>
+        </div>
+    </div>
+
+    <script>
+        // هنا يمكنك إضافة تفاعلات برمجية لاحقاً
+    </script>
+</body>
+</html>
