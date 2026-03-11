@@ -3,41 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر شحن الألعاب - تونس</title>
+    <title>Click-TN | متجر الشحن السريع</title>
     <style>
-        :root { --main-color: #ff4b2b; --bg-color: #121212; }
-        body { font-family: Arial, sans-serif; background-color: var(--bg-color); color: white; margin: 0; padding: 20px; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-        .product-card { background: #1e1e1e; border: 1px solid #333; border-radius: 15px; padding: 15px; transition: 0.3s; }
-        .product-card:hover { border-color: var(--main-color); transform: scale(1.02); }
-        .product-card img { width: 100%; border-radius: 10px; }
-        .price { font-size: 20px; color: #4caf50; font-weight: bold; margin: 10px 0; }
-        .btn-order { background: var(--main-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; }
+        :root { --primary: #e94560; --secondary: #0f3460; --bg: #1a1a2e; --text: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 10px; }
+        header { padding: 30px 10px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.freepik.com/premium-photo/gaming-background-with-neon-lights_127608-231.jpg'); background-size: cover; border-radius: 15px; margin-bottom: 20px; border-bottom: 3px solid var(--primary); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; max-width: 1000px; margin: auto; }
+        .card { background: var(--secondary); border-radius: 12px; overflow: hidden; border: 1px solid #16213e; transition: 0.3s; position: relative; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card img { width: 100%; height: 120px; object-fit: cover; }
+        .card-info { padding: 10px; }
+        .card-info h3 { font-size: 16px; margin: 5px 0; }
+        .price { color: #4eff4e; font-weight: bold; font-size: 18px; margin: 5px 0; }
+        .btn { background: var(--primary); color: white; text-decoration: none; display: block; padding: 10px; border-radius: 5px; font-weight: bold; font-size: 14px; margin-top: 10px; }
+        .badge { position: absolute; top: 5px; right: 5px; background: #4caf50; padding: 2px 8px; border-radius: 5px; font-size: 10px; }
     </style>
 </head>
 <body>
 
-    <h1>🎮 متجر الشحن السريع في تونس 🇹🇳</h1>
-    <p>شحن فوري - دفع عبر D17 أو تحويل بنكي</p>
+<header>
+    <h1>🎮 Click-TN Store</h1>
+    <p>أسرع شحن جواهر وبطاقات في تونس 🇹🇳</p>
+</header>
 
-    <div class="grid">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x120?text=Free+Fire" alt="Free Fire">
+<div class="grid">
+    <div class="card">
+        <span class="badge">متوفر</span>
+        <img src="https://garenafreefire.online/wp-content/uploads/2023/07/free-fire-diamonds.jpg" alt="Free Fire">
+        <div class="card-info">
             <h3>100 جوهرة فري فاير</h3>
             <div class="price">4.500 DT</div>
-            <a href="https://wa.me/216XXXXXXXX?text=أريد شراء 100 جوهرة فري فاير" class="btn-order">اطلب عبر واتساب</a>
-        </div>
-
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x120?text=Netflix" alt="Netflix">
-            <h3>اشتراك نتفلكس شهر</h3>
-            <div class="price">15.000 DT</div>
-            <a href="https://wa.me/216XXXXXXXX?text=أريد اشتراك نتفلكس" class="btn-order">اطلب عبر واتساب</a>
+            <a href="https://wa.me/+21646326474?text=أريد شراء 100 جوهرة فري فاير" class="btn">اطلب عبر واتساب</a>
         </div>
     </div>
 
-    <script>
-        // هنا يمكنك إضافة تفاعلات برمجية لاحقاً
-    </script>
+    <div class="card">
+        <span class="badge">متوفر</span>
+        <img src="https://images.ctfassets.net/4cd45et68cgf/4nrtXobpYj98vJu9As9u9S/f9191007797745778a483e58607a9793/Netflix_Logo_RGB.jpg" alt="Netflix">
+        <div class="card-info">
+            <h3>اشتراك نتفلكس شهر</h3>
+            <div class="price">15.000 DT</div>
+            <a href="https://wa.me/+21646326474?text=أريد اشتراك نتفلكس" class="btn">اطلب عبر واتساب</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MA-APPLE-GIFT-CARD-TILE?wid=400&hei=400&fmt=jpeg&qlt=95&.v=1630601248000" alt="Apple Card">
+        <div class="card-info">
+            <h3>بطاقة آبل 5$</h3>
+            <div class="price">22.000 DT</div>
+            <a href="https://wa.me/+21646326474?text=أريد بطاقة آبل" class="btn">اطلب عبر واتساب</a>
+        </div>
+    </div>
+</div>
+
+<footer style="margin-top: 40px; font-size: 12px; color: #888;">
+    <p>© 2026 Click-TN - دفع آمن عبر D17</p>
+</footer>
+
 </body>
 </html>
