@@ -3,60 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click-TN Store | شحن فوري تونس 🇹🇳</title>
+    <title>Click-TN Store | الأسعار المحدثة 🇹🇳</title>
     <style>
-        :root { --primary: #e94560; --bg: #1a1a2e; --card: #16213e; }
-        body { font-family: sans-serif; background-color: var(--bg); color: white; margin: 0; text-align: center; }
-        header { padding: 30px; background: #1a1a2e; border-bottom: 3px solid var(--primary); }
-        .container { padding: 20px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
-        .card { background: var(--card); border-radius: 15px; overflow: hidden; width: 95%; max-width: 350px; border: 1px solid #2d3436; }
-        
-        /* بديل الصور الاحترافي */
-        .img-placeholder { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 80px; background: #1f4068; }
-        
-        .info { padding: 20px; }
-        .price { font-size: 1.8rem; color: #4eff4e; font-weight: bold; margin: 10px 0; }
-        .btn { background: var(--primary); color: white; text-decoration: none; display: block; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 1.1rem; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; font-size: 35px; }
+        :root { --primary: #e94560; --bg: #0f172a; --card: #1e293b; --success: #25d366; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: white; margin: 0; text-align: center; }
+        header { padding: 40px 20px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 4px solid var(--primary); }
+        .container { padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+        .card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; padding-bottom: 20px; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .icon-box { height: 100px; display: flex; align-items: center; justify-content: center; font-size: 50px; background: rgba(255,255,255,0.05); }
+        .info { padding: 15px; }
+        h3 { margin: 10px 0; font-size: 1.2rem; color: #fff; }
+        select { width: 90%; padding: 12px; border-radius: 10px; border: 2px solid #334155; background: #0f172a; color: white; font-size: 1rem; margin-bottom: 15px; outline: none; cursor: pointer; }
+        .btn { background: var(--primary); color: white; text-decoration: none; display: inline-block; width: 90%; padding: 15px; border-radius: 12px; font-weight: bold; border: none; cursor: pointer; font-size: 1rem; }
+        .btn:hover { background: #ff2e63; box-shadow: 0 0 15px rgba(233, 69, 96, 0.4); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: var(--success); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; font-size: 35px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Click-TN Store 🎮</h1>
-    <p>شحن ألعاب وبطاقات | دفع آمن D17 🇹🇳</p>
+    <p>شحن فوري بتونس | سعر الدولار 3.500 DT 🇹🇳</p>
 </header>
 
 <div class="container">
     <div class="card">
-        <div class="img-placeholder">💎</div>
+        <div class="icon-box">💎</div>
         <div class="info">
-            <h3>100 جوهرة فري فاير</h3>
-            <p class="price">4.000 DT</p>
-            <a href="https://wa.me/21646326474?text=أريد شحن 100 جوهرة" class="btn">اطلب عبر واتساب</a>
+            <h3>فري فاير (Free Fire)</h3>
+            <select id="ff-options">
+                <option value="100 جوهرة بـ 4.000 DT">100 جوهرة - 4.000 DT</option>
+                <option value="210 جوهرة بـ 8.200 DT">210 جوهرة - 8.200 DT</option>
+                <option value="530 جوهرة بـ 18.500 DT">530 جوهرة - 18.500 DT</option>
+                <option value="1080 جوهرة بـ 36.000 DT">1080 جوهرة - 36.000 DT</option>
+                <option value="2200 جوهرة بـ 72.000 DT">2200 جوهرة - 72.000 DT</option>
+            </select>
+            <button onclick="order('Free Fire 💎', 'ff-options')" class="btn">اطلب عبر واتساب</button>
         </div>
     </div>
 
     <div class="card">
-        <div class="img-placeholder">🎬</div>
+        <div class="icon-box">🔫</div>
         <div class="info">
-            <h3>نتفلكس شهر (Premium)</h3>
-            <p class="price">15.000 DT</p>
-            <a href="https://wa.me/21646326474?text=أريد اشتراك نتفلكس" class="btn">اطلب عبر واتساب</a>
+            <h3>ببجي (PUBG UC)</h3>
+            <select id="pubg-options">
+                <option value="60 UC بـ 4.500 DT">60 UC - 4.500 DT</option>
+                <option value="300 UC بـ 19.500 DT">300 UC - 19.500 DT</option>
+                <option value="600 UC بـ 38.000 DT">600 UC - 38.000 DT</option>
+                <option value="1500 UC بـ 89.000 DT">1500 UC - 89.000 DT</option>
+                <option value="3000 UC بـ 175.000 DT">3000 UC - 175.000 DT</option>
+            </select>
+            <button onclick="order('PUBG 🔫', 'pubg-options')" class="btn">اطلب عبر واتساب</button>
         </div>
     </div>
 
     <div class="card">
-        <div class="img-placeholder">🍎</div>
+        <div class="icon-box">⚔️</div>
         <div class="info">
-            <h3>بطاقة آبل 5$</h3>
-            <p class="price">22.000 DT</p>
-            <a href="https://wa.me/21646326474?text=أريد بطاقة آبل" class="btn">اطلب عبر واتساب</a>
+            <h3>موبايل ليجند (MLBB)</h3>
+            <select id="ml-options">
+                <option value="278 Diamond بـ 22.000 DT">278 Diamond - 22.000 DT</option>
+                <option value="571 Diamond بـ 44.000 DT">571 Diamond - 44.000 DT</option>
+                <option value="1167 Diamond بـ 88.000 DT">1167 Diamond - 88.000 DT</option>
+            </select>
+            <button onclick="order('Mobile Legends ⚔️', 'ml-options')" class="btn">اطلب عبر واتساب</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">🍎</div>
+        <div class="info">
+            <h3>آبل أمريكي (Apple Store)</h3>
+            <select id="apple-options">
+                <option value="2$ بـ 8.500 DT">2$ - 8.500 DT</option>
+                <option value="10$ بـ 38.000 DT">10$ - 38.000 DT</option>
+                <option value="20$ بـ 74.000 DT">20$ - 74.000 DT</option>
+                <option value="50$ بـ 185.000 DT">50$ - 185.000 DT</option>
+                <option value="100$ بـ 365.000 DT">100$ - 365.000 DT</option>
+            </select>
+            <button onclick="order('Apple Card 🍎', 'apple-options')" class="btn">اطلب عبر واتساب</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">📱</div>
+        <div class="info">
+            <h3>تيك توك (Tik Tok Coins)</h3>
+            <select id="tiktok-options">
+                <option value="1000 Coin بـ 45.000 DT">1000 Coin - 45.000 DT</option>
+                <option value="5000 Coin بـ 215.000 DT">5000 Coin - 215.000 DT</option>
+                <option value="10000 Coin بـ 420.000 DT">10000 Coin - 420.000 DT</option>
+            </select>
+            <button onclick="order('Tik Tok Coins 📱', 'tiktok-options')" class="btn">اطلب عبر واتساب</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">💳</div>
+        <div class="info">
+            <h3>ريدوت باي (Redot Pay)</h3>
+            <select id="redot-options">
+                <option value="5$ بـ 19.500 DT">5$ - 19.500 DT</option>
+                <option value="10$ بـ 38.500 DT">10$ - 38.500 DT</option>
+                <option value="50$ بـ 185.000 DT">50$ - 185.000 DT</option>
+                <option value="100$ بـ 365.000 DT">100$ - 365.000 DT</option>
+            </select>
+            <button onclick="order('Redot Pay 💳', 'redot-options')" class="btn">اطلب عبر واتساب</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box">💵</div>
+        <div class="info">
+            <h3>شراء USDT (سعر الصرف 3.65)</h3>
+            <select id="usdt-options">
+                <option value="10 USDT بـ 36.500 DT">10 USDT - 36.500 DT</option>
+                <option value="50 USDT بـ 182.500 DT">50 USDT - 182.500 DT</option>
+                <option value="100 USDT بـ 365.000 DT">100 USDT - 365.000 DT</option>
+            </select>
+            <button onclick="order('USDT 💵', 'usdt-options')" class="btn">اطلب عبر واتساب</button>
         </div>
     </div>
 </div>
 
 <a href="https://wa.me/21646326474" class="whatsapp-float" target="_blank">💬</a>
 
+<script>
+    function order(product, selectId) {
+        var choice = document.getElementById(selectId).value;
+        var message = "مرحباً Click-TN Store 👋\nأريد طلب خدمة:\n\n📌 المنتج: " + product + "\n💰 العرض: " + choice + "\n\nأرجو تزويدي بتفاصيل الدفع D17.";
+        var url = "https://wa.me/21646326474?text=" + encodeURIComponent(message);
+        window.open(url, '_blank');
+    }
+</script>
+
+<footer style="margin: 40px 0; color: #64748b; font-size: 0.9rem;">
+    <p>© 2026 Click-TN Store - تونس 🇹🇳</p>
+</footer>
+
 </body>
 </html>
+
