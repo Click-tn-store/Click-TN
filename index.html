@@ -11,15 +11,15 @@
         .logo { font-size: 2.5rem; font-weight: bold; }
         .logo span { color: var(--primary); }
         .container { padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
-        .card { background: var(--card); border-radius: 15px; overflow: hidden; padding-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border: 1px solid var(--primary); }
+        .card { background: var(--card); border-radius: 15px; overflow: hidden; padding-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; border: 1px solid transparent; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
         .card-image-box { width: 100%; height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
         .card-image-box img { width: 100%; height: 100%; object-fit: cover; }
         .info { padding: 15px; }
-        select { width: 90%; padding: 10px; border-radius: 8px; margin-bottom: 15px; background: #0f172a; color: white; border: 1px solid #334155; }
-        .btn { background: var(--primary); color: white; width: 90%; padding: 12px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; }
+        select { width: 90%; padding: 12px; border-radius: 8px; margin-bottom: 15px; background: #0f172a; color: white; border: 1px solid #334155; font-size: 0.95rem; }
+        .btn { background: var(--primary); color: white; width: 90%; padding: 12px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; font-size: 1rem; }
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
-        .modal-content { background: #1e293b; margin: 15% auto; padding: 25px; border-radius: 15px; width: 80%; max-width: 350px; border: 1px solid var(--primary); }
+        .modal-content { background: #1e293b; margin: 15% auto; padding: 25px; border-radius: 15px; width: 85%; max-width: 350px; border: 1px solid var(--primary); }
         .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; }
         .d17 { background: #ffcc00; color: #000; }
         .flouci { background: #6c5ce7; color: #fff; }
@@ -30,7 +30,7 @@
 
 <header>
     <div class="logo">Click-<span>TN</span> Store</div>
-    <p>متجرك الموثوق للشحن والتسوق في تونس 🇹🇳</p>
+    <p>شحن الألعاب والخدمات الرقمية في تونس 🇹🇳</p>
 </header>
 
 <div class="container">
@@ -58,6 +58,9 @@
                 <option value="60 UC بـ 4.500 DT">60 UC - 4.500 DT</option>
                 <option value="325 UC بـ 19.500 DT">325 UC - 19.500 DT</option>
                 <option value="660 UC بـ 38.000 DT">660 UC - 38.000 DT</option>
+                <option value="1800 UC بـ 95.000 DT">1800 UC - 95.000 DT</option>
+                <option value="3850 UC بـ 185.000 DT">3850 UC - 185.000 DT</option>
+                <option value="8100 UC بـ 360.000 DT">8100 UC - 360.000 DT</option>
             </select>
             <button onclick="openModal('ببجي موبايل', 'pubg-options')" class="btn">شحن الآن</button>
         </div>
@@ -70,6 +73,11 @@
             <select id="ff-options">
                 <option value="100 جوهرة بـ 4.000 DT">100 جوهرة - 4.000 DT</option>
                 <option value="210 جوهرة بـ 8.200 DT">210 جوهرة - 8.200 DT</option>
+                <option value="530 جوهرة بـ 18.500 DT">530 جوهرة - 18.500 DT</option>
+                <option value="1080 جوهرة بـ 36.000 DT">1080 جوهرة - 36.000 DT</option>
+                <option value="2200 جوهرة بـ 70.000 DT">2200 جوهرة - 70.000 DT</option>
+                <option value="Weekly Lite بـ 8.000 DT">Weekly Lite - 8.000 DT</option>
+                <option value="Monthly بـ 35.000 DT">Monthly - 35.000 DT</option>
             </select>
             <button onclick="openModal('فري فاير', 'ff-options')" class="btn">شحن الآن</button>
         </div>
@@ -81,6 +89,9 @@
             <h3>عملة USDT 💵</h3>
             <select id="usdt-options">
                 <option value="10 USDT بـ 36.500 DT">10 USDT - 36.500 DT</option>
+                <option value="20 USDT بـ 73.000 DT">20 USDT - 73.000 DT</option>
+                <option value="50 USDT بـ 182.500 DT">50 USDT - 182.500 DT</option>
+                <option value="100 USDT بـ 365.000 DT">100 USDT - 365.000 DT</option>
             </select>
             <button onclick="openModal('USDT', 'usdt-options')" class="btn">اطلب الآن</button>
         </div>
@@ -91,7 +102,9 @@
         <div class="info">
             <h3>نتفليكس (🎬)</h3>
             <select id="netflix-options">
-                <option value="شهر Premium بـ 15.000 DT">شهر Premium - 15.000 DT</option>
+                <option value="حساب مشترك شهر بـ 15.000 DT">حساب مشترك (شهر) - 15.000 DT</option>
+                <option value="بروفايل خاص شهر بـ 25.000 DT">بروفايل خاص (شهر) - 25.000 DT</option>
+                <option value="حساب كامل شهر بـ 60.000 DT">حساب كامل (شهر) - 60.000 DT</option>
             </select>
             <button onclick="openModal('نتفليكس', 'netflix-options')" class="btn">اشترك الآن</button>
         </div>
@@ -102,7 +115,10 @@
         <div class="info">
             <h3>تيك توك (📱)</h3>
             <select id="tiktok-options">
-                <option value="1000 Coin بـ 45.000 DT">1000 Coin - 45.000 DT</option>
+                <option value="70 Coin بـ 4.000 DT">70 Coin - 4.000 DT</option>
+                <option value="350 Coin بـ 18.000 DT">350 Coin - 18.000 DT</option>
+                <option value="700 Coin بـ 35.000 DT">700 Coin - 35.000 DT</option>
+                <option value="3500 Coin بـ 165.000 DT">3500 Coin - 165.000 DT</option>
             </select>
             <button onclick="openModal('تيك توك', 'tiktok-options')" class="btn">شحن الآن</button>
         </div>
@@ -114,7 +130,7 @@
         <h3>اختر وسيلة الدفع</h3>
         <button onclick="sendOrder('D17')" class="pay-btn d17">D17 💳</button>
         <button onclick="sendOrder('Flouci')" class="pay-btn flouci">Flouci 📱</button>
-        <button onclick="closeModal()" style="background:none; color:white; border:none; margin-top:10px; cursor:pointer;">إلغاء</button>
+        <button onclick="closeModal()" style="background:none; color:white; border:none; margin-top:15px; cursor:pointer;">إلغاء</button>
     </div>
 </div>
 
