@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click-TN Store | شحن فوري تونس 🇹🇳</title>
     <style>
-        :root { --primary: #e94560; --bg: #0f3460; --card: #16213e; }
+        :root { --primary: #e94560; --bg: #1a1a2e; --card: #16213e; }
         body { font-family: sans-serif; background-color: var(--bg); color: white; margin: 0; text-align: center; }
         header { padding: 30px; background: #1a1a2e; border-bottom: 3px solid var(--primary); }
         .container { padding: 20px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
         .card { background: var(--card); border-radius: 15px; overflow: hidden; width: 95%; max-width: 350px; border: 1px solid #2d3436; }
-        /* تحسين عرض الصور لتظهر دائماً */
-        .card-img { width: 100%; height: 180px; background-size: cover; background-position: center; background-repeat: no-repeat; }
-        .info { padding: 15px; }
-        .price { font-size: 1.5rem; color: #4eff4e; font-weight: bold; margin: 10px 0; }
-        .btn { background: var(--primary); color: white; text-decoration: none; display: block; padding: 12px; border-radius: 10px; font-weight: bold; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 999; }
+        
+        /* بديل الصور الاحترافي */
+        .img-placeholder { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 80px; background: #1f4068; }
+        
+        .info { padding: 20px; }
+        .price { font-size: 1.8rem; color: #4eff4e; font-weight: bold; margin: 10px 0; }
+        .btn { background: var(--primary); color: white; text-decoration: none; display: block; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 1.1rem; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; font-size: 35px; }
     </style>
 </head>
 <body>
@@ -27,7 +29,7 @@
 
 <div class="container">
     <div class="card">
-        <div class="card-img" style="background-image: url('https://i.pinimg.com/736x/f1/35/d3/f135d398935c1064841961559897003a.jpg');"></div>
+        <div class="img-placeholder">💎</div>
         <div class="info">
             <h3>100 جوهرة فري فاير</h3>
             <p class="price">4.000 DT</p>
@@ -36,7 +38,7 @@
     </div>
 
     <div class="card">
-        <div class="card-img" style="background-image: url('https://i.pinimg.com/736x/8a/f4/11/8af41170753063f45c26b8df8186105c.jpg');"></div>
+        <div class="img-placeholder">🎬</div>
         <div class="info">
             <h3>نتفلكس شهر (Premium)</h3>
             <p class="price">15.000 DT</p>
@@ -45,7 +47,7 @@
     </div>
 
     <div class="card">
-        <div class="card-img" style="background-image: url('https://i.pinimg.com/736x/21/f8/f0/21f8f0170a41753c155d045239a2632b.jpg');"></div>
+        <div class="img-placeholder">🍎</div>
         <div class="info">
             <h3>بطاقة آبل 5$</h3>
             <p class="price">22.000 DT</p>
@@ -54,9 +56,7 @@
     </div>
 </div>
 
-<a href="https://wa.me/21646326474" class="whatsapp-float" target="_blank">
-    <span style="font-size: 30px;">💬</span>
-</a>
+<a href="https://wa.me/21646326474" class="whatsapp-float" target="_blank">💬</a>
 
 </body>
 </html>
