@@ -11,7 +11,6 @@
             --bg: #f8fafc; 
             --card-bg: #ffffff;
             --text-main: #1e293b;
-            --text-dim: #64748b;
             --success: #25d366; 
             --border: #e2e8f0;
         }
@@ -22,39 +21,28 @@
             color: var(--text-main); 
             margin: 0; 
             text-align: center;
-            overflow-x: hidden;
         }
 
-        /* شريط الثقة */
         .trust-bar {
             background: var(--primary);
             color: white;
             padding: 12px 0;
             font-size: 0.9rem;
             font-weight: bold;
-            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
         }
 
-        /* الهيدر الاحترافي */
         header { 
             padding: 50px 20px; 
             background: white;
             border-bottom: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
-        .logo { font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
+        .logo { font-size: 3rem; font-weight: 900; }
         .logo .dark { color: #1e293b; }
-        .logo .blue { color: var(--primary); text-shadow: 2px 2px 4px rgba(37, 99, 235, 0.1); }
+        .logo .blue { color: var(--primary); }
 
-        .hero-title { font-size: 1.5rem; color: var(--text-dim); margin: 15px 0; }
-
-        .trust-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-        .badge { background: #eff6ff; color: var(--primary); padding: 8px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; border: 1px solid #dbeafe; }
-
-        /* حاوية المنتجات */
         .container { 
-            padding: 40px 15px; 
+            padding: 30px 15px; 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 25px; 
@@ -64,114 +52,151 @@
 
         .card { 
             background: var(--card-bg); 
-            border-radius: 24px; 
+            border-radius: 20px; 
             overflow: hidden; 
-            transition: 0.3s ease; 
             border: 1px solid var(--border);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        .card-image-box { width: 100%; height: 200px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
-        .card-image-box img { width: 85%; height: 85%; object-fit: contain; }
+        .card-image-box { width: 100%; height: 180px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
+        .card-image-box img { width: 80%; height: 80%; object-fit: contain; }
 
-        .info { padding: 20px; flex-grow: 1; }
-        .info h3 { margin-bottom: 15px; font-size: 1.1rem; }
-
-        select { width: 100%; padding: 12px; border-radius: 12px; margin-bottom: 15px; background: #f8fafc; color: var(--text-main); border: 1px solid var(--border); font-family: 'Tajawal'; outline: none; }
-        select:focus { border-color: var(--primary); }
-
-        .btn { background: #1e293b; color: white; width: 100%; padding: 14px; border-radius: 12px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; font-size: 1rem; }
-        .btn:hover { background: var(--primary); transform: translateY(-2px); }
-
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); }
-        .modal-content { background: white; margin: 15% auto; padding: 30px; border-radius: 24px; width: 85%; max-width: 380px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .info { padding: 20px; }
+        select { width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 15px; background: #f8fafc; border: 1px solid var(--border); font-family: 'Tajawal'; }
         
-        .pay-btn { display: block; width: 100%; padding: 15px; margin: 12px 0; border-radius: 15px; border: none; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.2s; }
-        .d17 { background: #ffcc00; color: #000; }
-        .flouci { background: #6c5ce7; color: #fff; }
-        .cancel-btn { background: #f1f5f9; color: #64748b; }
+        .btn { background: #1e293b; color: white; width: 100%; padding: 14px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: var(--primary); }
 
-        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background: var(--success); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4); z-index: 3000; transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .modal-content { background: white; margin: 15% auto; padding: 25px; border-radius: 20px; width: 85%; max-width: 350px; text-align: center; }
+        .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; }
+        .d17 { background: #ffcc00; }
+        .flouci { background: #6c5ce7; color: white; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .card { animation: fadeIn 0.5s ease backwards; }
+        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background: var(--success); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
 
 <div class="trust-bar">
-    <marquee behavior="scroll" direction="right" scrollamount="7">
-        🚀 شحن فوري وآمن لجميع الألعاب والخدمات الرقمية في تونس 🇹🇳 الجزائر 🇩🇿 مصر 🇪🇬 المغرب 🇲🇦 ليبيا 🇱🇾 | ⚡ تنفيذ الطلبات في أقل من 10 دقائق | ✅ ضمان 100%
-    </marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="7">🚀 شحن فوري وآمن لجميع الألعاب والخدمات الرقمية في تونس 🇹🇳 | تنفيذ الطلبات في أقل من 10 دقائق | ✅ ضمان 100%</marquee>
 </div>
 
 <header>
     <div class="logo"><span class="dark">Click-</span><span class="blue">TN</span> <span class="dark">Store</span></div>
-    <h2 class="hero-title">جودة، سرعة، وأمان في كل شحنة ⚡</h2>
-    <div class="trust-badges">
-        <div class="badge">✅ متجر موثوق</div>
-        <div class="badge">⚡ شحن تلقائي</div>
-        <div class="badge">🛡️ حماية 100%</div>
-    </div>
+    <p>متجرك المتكامل لشحن الألعاب والخدمات</p>
 </header>
 
 <div class="container">
     
-    <div class="card" style="animation-delay: 0.1s;">
-        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/en/a/af/Free_Fire_Logo.png" alt="Free Fire"></div>
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/en/a/af/Free_Fire_Logo.png"></div>
         <div class="info">
             <h3>جواهر فري فاير (ID)</h3>
-            <select id="ff-options">
+            <select id="ff-opt">
                 <option value="100 جوهرة بـ 4.500 DT">100 جوهرة - 4.500 DT</option>
                 <option value="210 جوهرة بـ 8.500 DT">210 جوهرة - 8.500 DT</option>
                 <option value="570 جوهرة بـ 16.500 DT">570 جوهرة - 16.500 DT</option>
                 <option value="1140 جوهرة بـ 32.000 DT">1140 جوهرة - 32.000 DT</option>
             </select>
-            <button class="btn" onclick="openModal('جواهر فري فاير', 'ff-options')">اشحن الآن</button>
+            <button class="btn" onclick="openModal('فري فاير', 'ff-opt')">اشحن الآن</button>
         </div>
     </div>
 
-    <div class="card" style="animation-delay: 0.2s;">
-        <div class="card-image-box"><img src="https://w7.pngwing.com/pngs/514/716/png-transparent-pubg-mobile-playerunknown-s-battlegrounds-game-logo-thumbnail.png" alt="PUBG"></div>
+    <div class="card">
+        <div class="card-image-box"><img src="https://w7.pngwing.com/pngs/514/716/png-transparent-pubg-mobile-playerunknown-s-battlegrounds-game-logo-thumbnail.png"></div>
         <div class="info">
             <h3>شدات ببجي (UC)</h3>
-            <select id="pubg-options">
+            <select id="pubg-opt">
                 <option value="60 UC بـ 4.000 DT">60 UC - 4.000 DT</option>
                 <option value="325 UC بـ 18.500 DT">325 UC - 18.500 DT</option>
                 <option value="660 UC بـ 36.000 DT">660 UC - 36.000 DT</option>
             </select>
-            <button class="btn" onclick="openModal('شدات ببجي', 'pubg-options')">اشحن الآن</button>
+            <button class="btn" onclick="openModal('ببجي', 'pubg-opt')">اشحن الآن</button>
         </div>
     </div>
 
-    <div class="card" style="animation-delay: 0.3s;">
-        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg" alt="Binance"></div>
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg"></div>
         <div class="info">
             <h3>شحن USDT باينانس</h3>
-            <select id="usdt-options">
+            <select id="usdt-opt">
                 <option value="1 USDT بـ 3.500 DT">1 USDT - 3.500 DT</option>
                 <option value="10 USDT بـ 34.500 DT">10 USDT - 34.500 DT</option>
                 <option value="20 USDT بـ 68.000 DT">20 USDT - 68.000 DT</option>
             </select>
-            <button class="btn" onclick="openModal('شحن USDT', 'usdt-options')">اشحن الآن</button>
+            <button class="btn" onclick="openModal('باينانس', 'usdt-opt')">اشحن الآن</button>
         </div>
     </div>
 
-    <div class="card" style="animation-delay: 0.4s;">
-        <div class="card-image-box"><img src="https://img.icons8.com/fluency/96/wifi.png" alt="Ooredoo"></div>
+    <div class="card">
+        <div class="card-image-box"><img src="https://img.icons8.com/fluency/96/wifi.png"></div>
         <div class="info">
-            <h3>باقات إنترنات أوريدو (Ooredoo)</h3>
-            <select id="ooredoo-options">
-                <option value="25Go بـ 30.000 DT">25Go انترنات - 30.000 DT</option>
-                <option value="55Go بـ 50.000 DT">55Go انترنات - 50.000 DT</option>
-                <option value="100Go بـ 85.000 DT">100Go انترنات - 85.000 DT</option> </select>
-            <button class="btn" onclick="openModal('أنترنات أوريدو', 'ooredoo-options')">تفعيل سريع</button>
+            <h3>إنترنات داتا (Ooredoo)</h3>
+            <select id="net-opt">
+                <option value="25Go بـ 30.000 DT">25Go - 30.000 DT</option>
+                <option value="55Go بـ 50.000 DT">55Go - 50.000 DT</option>
+                <option value="100Go بـ 85.000 DT">100Go - 85.000 DT</option> </select>
+            <button class="btn" onclick="openModal('انترنات أوريدو', 'net-opt')">تفعيل سريع</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image-box"><img src="https://seeklogo.com/images/E/efootball-logo-88C15409E3-seeklogo.com.png"></div>
+        <div class="info">
+            <h3>eFootball Coins</h3>
+            <select id="ef-opt">
+                <option value="عروض متغيرة">اطلب السعر الحالي</option>
+            </select>
+            <button class="btn" onclick="openModal('إيفوتبول', 'ef-opt')">اطلب الآن</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image-box"><img src="https://img.icons8.com/color/96/phone.png"></div>
+        <div class="info">
+            <h3>شحن رصيد (Sabba/Recharge)</h3>
+            <select id="phone-opt">
+                <option value="10 DT بـ 11.000 DT">10 DT - 11.000 DT</option>
+                <option value="20 DT بـ 22.000 DT">20 DT - 22.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('شحن هاتف', 'phone-opt')">اشحن رصيدك</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image-box"><img src="https://img.icons8.com/color/512/visa.png"></div>
+        <div class="info">
+            <h3>RedotPay Visa</h3>
+            <select id="red-opt">
+                <option value="شحن 10 دولار بـ 35.000 DT">شحن 10$ - 35.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('ريدوت باي', 'red-opt')">اشحن الآن</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"></div>
+        <div class="info">
+            <h3>Netflix Premium</h3>
+            <select id="nf-opt">
+                <option value="شهر بـ 15.000 DT">حساب مشترك شهر - 15.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('نتفليكس', 'nf-opt')">اشترك الآن</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Poste_Tunisie_%28logo%29.svg"></div>
+        <div class="info">
+            <h3>D17 / خلاص فواتير</h3>
+            <select id="bill-opt">
+                <option value="خدمة سريعة">تحويل أو خلاص فواتير</option>
+            </select>
+            <button class="btn" onclick="openModal('خدمات مالية', 'bill-opt')">تواصل معنا</button>
         </div>
     </div>
 
@@ -179,43 +204,30 @@
 
 <div id="paymentModal" class="modal">
     <div class="modal-content">
-        <h3 id="modalTitle" style="margin-bottom: 10px;">اختر طريقة الدفع</h3>
-        <p id="modalOffer" style="color: var(--text-dim); margin-bottom: 20px; font-size: 0.9rem;"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalOffer" style="margin-bottom: 20px; color: #64748b;"></p>
         <button class="pay-btn d17" onclick="pay('D17')">دفع عبر D17 💳</button>
         <button class="pay-btn flouci" onclick="pay('Flouci')">دفع عبر Flouci 💜</button>
-        <button class="pay-btn cancel-btn" onclick="closeModal()">إلغاء</button>
+        <button class="pay-btn" style="background:#f1f5f9" onclick="closeModal()">إلغاء</button>
     </div>
 </div>
 
 <a href="https://wa.me/21646326474" class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:35px">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
 </a>
 
 <script>
-    let selectedProduct = "";
-    let selectedPrice = "";
-
-    function openModal(product, selectId) {
-        selectedProduct = product;
-        selectedPrice = document.getElementById(selectId).value;
-        document.getElementById('modalTitle').innerText = "شحن " + product;
-        document.getElementById('modalOffer').innerText = "العرض المختار: " + selectedPrice;
+    let pName = "", pPrice = "";
+    function openModal(name, id) {
+        pName = name; pPrice = document.getElementById(id).value;
+        document.getElementById('modalTitle').innerText = "شحن " + name;
+        document.getElementById('modalOffer').innerText = "العرض: " + pPrice;
         document.getElementById('paymentModal').style.display = 'block';
     }
-
-    function closeModal() {
-        document.getElementById('paymentModal').style.display = 'none';
-    }
-
+    function closeModal() { document.getElementById('paymentModal').style.display = 'none'; }
     function pay(method) {
-        let message = `سلام Click-TN، نحب نخلص ${selectedProduct} (${selectedPrice}) عن طريق ${method}`;
-        window.open(`https://wa.me/21646326474?text=${encodeURIComponent(message)}`, '_blank');
-    }
-
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('paymentModal')) {
-            closeModal();
-        }
+        let msg = `سلام Click-TN، نحب نطلب ${pName} (${pPrice}) عن طريق ${method}`;
+        window.open(`https://wa.me/21646326474?text=${encodeURIComponent(msg)}`, '_blank');
     }
 </script>
 
