@@ -3,244 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click-TN Store | المتجر المتكامل</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>Click-TN Store | المتجر المتكامل 🇹🇳</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-body: #f8fafc;
-            --white: #ffffff;
-            --primary: #1e293b;
-            --accent: #2563eb;
+        :root { 
+            --primary: #2563eb; 
+            --bg: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --success: #25d366; 
             --border: #e2e8f0;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
-            --danger: #e11d48;
         }
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-body);
-            margin: 0;
-            padding: 10px;
-            color: var(--primary);
-            padding-bottom: 80px; /* مساحة لزر الواتساب */+21646326474
-        }
-
-        /* الهيدر */
-        header {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 20px;
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            margin: 0; 
             text-align: center;
-            box-shadow: var(--shadow);
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
+            overflow-x: hidden;
+            padding-bottom: 50px;
         }
 
-        /* شريط البحث الوهمي */
+        .trust-bar {
+            background: var(--primary);
+            color: white;
+            padding: 12px 0;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        header { 
+            padding: 30px 20px; 
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo { font-size: 2.5rem; font-weight: 900; margin-bottom: 5px; }
+        .logo .black { color: #1e293b; }
+        .logo .blue { color: var(--primary); }
+
+        .search-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
         .search-bar {
-            background: var(--white);
+            width: 100%;
+            background: white;
             border: 1px solid var(--border);
-            padding: 12px;
+            padding: 15px;
             border-radius: 15px;
-            margin-bottom: 20px;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--text-main);
+            text-align: right;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            outline: none;
+            font-family: 'Tajawal';
+            box-sizing: border-box;
         }
 
-        /* عناوين الأقسام */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 30px 5px 15px;
-            padding-right: 10px;
-            border-right: 4px solid var(--accent);
+        .container { 
+            padding: 10px 15px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+            gap: 15px; 
+            max-width: 1100px; 
+            margin: auto; 
         }
 
-        .section-header h2 { font-size: 1.1rem; margin: 0; }
-
-        /* شبكة المنتجات */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* منتجين في الصف للهاتف */
-            gap: 12px;
-        }
-
-        /* بطاقة المنتج */
-        .product-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 12px;
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            transition: 0.3s ease; 
             border: 1px solid var(--border);
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
             position: relative;
         }
 
-        .product-img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: contain;
-            border-radius: 15px;
-            background: #f1f5f9;
-            margin-bottom: 10px;
+        .badge {
+            position: absolute; top: 8px; right: 8px;
+            background: #ef4444; color: white;
+            font-size: 0.65rem; padding: 3px 7px;
+            border-radius: 6px; font-weight: bold; z-index: 5;
         }
 
-        .product-name {
-            font-size: 0.85rem;
-            font-weight: bold;
-            height: 34px;
-            margin-bottom: 5px;
-            line-height: 1.3;
-        }
+        .card-image-box { width: 100%; height: 140px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
+        .card-image-box img { width: 80%; height: 80%; object-fit: contain; }
 
-        .price-tag {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
+        .info { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
+        .info h3 { font-size: 0.9rem; margin: 0 0 10px; height: 38px; overflow: hidden; }
 
-        .btn-buy {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            cursor: pointer;
-        }
+        .timer-box { background: #fff1f2; color: #e11d48; font-size: 0.7rem; padding: 5px; border-radius: 8px; margin-bottom: 10px; font-weight: bold; }
 
-        /* العداد التنازلي */
-        .mini-timer {
-            background: #fff1f2;
-            color: var(--danger);
-            font-size: 0.7rem;
-            padding: 5px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            text-align: center;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
+        select { width: 100%; padding: 8px; border-radius: 10px; margin-bottom: 10px; background: #f8fafc; border: 1px solid var(--border); font-family: 'Tajawal'; font-size: 0.8rem; }
+        .btn { background: #1e293b; color: white; width: 100%; padding: 10px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; font-size: 0.85rem; }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.6; }
-            100% { opacity: 1; }
-        }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+        .modal-content { background: white; margin: 20% auto; padding: 25px; border-radius: 20px; width: 85%; max-width: 380px; }
+        .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; }
+        .d17 { background: #ffcc00; } .flouci { background: #6c5ce7; color: white; }
 
-        /* زر الواتساب العائم */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 25px;
-            left: 20px; /* لليسار حتى لا يغطي المحتوى الأساسي */
-            background-color: #25d366;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 2px 4px 15px rgba(0,0,0,0.2);
-            z-index: 9999;
-            transition: 0.3s;
-        }
-
-        .whatsapp-float:active { transform: scale(0.9); }
+        .whatsapp-float { position: fixed; bottom: 20px; left: 20px; background: var(--success); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 3000; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h2 style="margin:0; color: var(--accent);">Click-TN Store 🇹🇳</h2>
-        <p style="font-size: 0.8rem; color: #64748b; margin: 5px 0 0;">شحن ألعاب | إنترنات | عملات رقمية</p>
-    </header>
+<div class="trust-bar">
+    <marquee behavior="scroll" direction="right" scrollamount="6">🚀 شحن فوري لجميع الألعاب والخدمات الرقمية | ⚡ التنفيذ في أقل من 10 دقائق | ✅ ضمان 100%</marquee>
+</div>
 
-    <div class="search-bar">🔍 ابحث عن العرض المفضل لديك...</div>
+<header>
+    <div class="logo"><span class="black">Click-</span><span class="blue">TN</span> <span class="black">Store</span></div>
+</header>
 
-    <div class="section-header"><h2>🎮 شحن الألعاب</h2></div>
-    <div class="products-grid">
-        <div class="product-card">
-            <div class="mini-timer" id="timer1">ينتهي: 01:59:59</div>
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/af/Free_Fire_Logo.png" class="product-img">
-            <div class="product-name">570 جواهر فري فاير (ID)</div>
-            <div class="price-tag">16.500 DT</div>
-            <button class="btn-buy">شحن فوري</button>
-        </div>
-        <div class="product-card">
-            <img src="https://w7.pngwing.com/pngs/514/716/png-transparent-pubg-mobile-playerunknown-s-battlegrounds-game-logo-thumbnail.png" class="product-img">
-            <div class="product-name">325 شدة ببجي (UC)</div>
-            <div class="price-tag">18.500 DT</div>
-            <button class="btn-buy">شحن بالـ ID</button>
-        </div>
-    </div>
+<div class="search-container">
+    <input type="text" id="searchInput" class="search-bar" placeholder="🔍 ابحث عن العرض الذي تريده..." onkeyup="searchProducts()">
+</div>
 
-    <div class="section-header"><h2>💰 عملات رقمية</h2></div>
-    <div class="products-grid">
-        <div class="product-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg" class="product-img">
-            <div class="product-name">10 USDT باينانس</div>
-            <div class="price-tag">34.500 DT</div>
-            <button class="btn-buy">شحن محفظة</button>
-        </div>
-        <div class="product-card">
-            <img src="https://img.icons8.com/color/512/visa.png" class="product-img">
-            <div class="product-name">شحن كارت RedotPay</div>
-            <div class="price-tag">أفضل سعر</div>
-            <button class="btn-buy">اشحن الآن</button>
+<div class="container" id="productsContainer">
+    
+    <div class="card">
+        <span class="badge">الأكثر طلباً 🔥</span>
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/en/a/af/Free_Fire_Logo.png"></div>
+        <div class="info">
+            <h3>جواهر فري فاير (ID)</h3>
+            <div class="timer-box" id="timer">تنتهي التخفيضات: 02:30:00</div>
+            <select id="ff-opt">
+                <option value="570 جوهرة بـ 16.500 DT">570 جوهرة - 16.500 DT</option>
+                <option value="1140 جوهرة بـ 32.000 DT">1140 جوهرة - 32.000 DT</option>
+                <option value="2400 جوهرة بـ 65.000 DT">2400 جوهرة - 65.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('فري فاير', 'ff-opt')">اشحن الآن</button>
         </div>
     </div>
 
-    <div class="section-header"><h2>🌐 إنترنات واشتراكات</h2></div>
-    <div class="products-grid">
-        <div class="product-card">
-            <img src="https://img.icons8.com/fluency/96/wifi.png" class="product-img">
-            <div class="product-name">باقة 25Go إنترنات</div>
-            <div class="price-tag">30.000 DT</div>
-            <button class="btn-buy">تفعيل برقمك</button>
-        </div>
-        <div class="product-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" class="product-img" style="padding:10px;">
-            <div class="product-name">Netflix Premium</div>
-            <div class="price-tag">15.000 DT</div>
-            <button class="btn-buy">اشتراك شهر</button>
+    <div class="card">
+        <div class="card-image-box"><img src="https://w7.pngwing.com/pngs/514/716/png-transparent-pubg-mobile-playerunknown-s-battlegrounds-game-logo-thumbnail.png"></div>
+        <div class="info">
+            <h3>شدات ببجي (UC)</h3>
+            <select id="pubg-opt">
+                <option value="325 شدة بـ 18.500 DT">325 UC - 18.500 DT</option>
+                <option value="660 شدة بـ 36.000 DT">660 UC - 36.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('ببجي', 'pubg-opt')">اشحن الآن</button>
         </div>
     </div>
 
-    <a href="https://wa.me/216XXXXXXXX?text=سلام،%20نحب%20نطلب%20عرض%20من%20Click-TN%20Store" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 35px; height: 35px;">
-    </a>
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg"></div>
+        <div class="info">
+            <h3>شحن USDT باينانس</h3>
+            <select id="usdt-opt">
+                <option value="10 USDT بـ 34.500 DT">10 USDT - 34.500 DT</option>
+                <option value="20 USDT بـ 68.000 DT">20 USDT - 68.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('باينانس', 'usdt-opt')">اشحن الآن</button>
+        </div>
+    </div>
 
-    <script>
-        // تشغيل العداد التنازلي
-        function startTimer(duration, display) {
-            var timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = parseInt(timer / 3600, 10);
-                minutes = parseInt((timer % 3600) / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+    <div class="card">
+        <div class="card-image-box"><img src="https://img.icons8.com/fluency/96/wifi.png"></div>
+        <div class="info">
+            <h3>إنترنات داتا (كل الشبكات)</h3>
+            <select id="net-opt">
+                <option value="25Go بـ 30.000 DT">25Go - 30.000 DT</option>
+                <option value="55Go بـ 50.000 DT">55Go - 50.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('انترنات', 'net-opt')">تفعيل سريع</button>
+        </div>
+    </div>
 
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+    <div class="card">
+        <div class="card-image-box"><img src="https://seeklogo.com/images/E/efootball-logo-88C15409E3-seeklogo.com.png"></div>
+        <div class="info">
+            <h3>eFootball 2024 Coins</h3>
+            <select id="ef-opt">
+                <option value="تواصل للمزيد من العروض">عروض متغيرة يومياً</option>
+            </select>
+            <button class="btn" onclick="openModal('إيفوتبول', 'ef-opt')">طلب العرض</button>
+        </div>
+    </div>
 
-                display.textContent = "ينتهي: " + hours + ":" + minutes + ":" + seconds;
+    <div class="card">
+        <div class="card-image-box"><img src="https://img.icons8.com/color/512/visa.png"></div>
+        <div class="info">
+            <h3>شحن RedotPay / بطاقات</h3>
+            <select id="red-opt">
+                <option value="شحن رصيد الكارت">شحن رصيد مباشر</option>
+            </select>
+            <button class="btn" onclick="openModal('ريدوت باي', 'red-opt')">اشحن الآن</button>
+        </div>
+    </div>
 
-                if (--timer < 0) { timer = duration; }
-            }, 1000);
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"></div>
+        <div class="info">
+            <h3>اشتراكات Netflix Premium</h3>
+            <select id="nf-opt">
+                <option value="شهر واحد بـ 15.000 DT">شهر واحد - 15.000 DT</option>
+            </select>
+            <button class="btn" onclick="openModal('نتفليكس', 'nf-opt')">اشتراك</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Poste_Tunisie_%28logo%29.svg"></div>
+        <div class="info">
+            <h3>خلاص فواتير / تحويل D17</h3>
+            <select id="bill-opt">
+                <option value="خدمة تحويل / خلاص فواتير">خدمة سريعة</option>
+            </select>
+            <button class="btn" onclick="openModal('خدمات بريدية', 'bill-opt')">تواصل معنا</button>
+        </div>
+    </div>
+
+</div>
+
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <p id="modalOffer" style="font-size: 0.9rem; color: #64748b;"></p>
+        <button class="pay-btn d17" onclick="pay('D17')">دفع عبر D17 💳</button>
+        <button class="pay-btn flouci" onclick="pay('Flouci')">دفع عبر Flouci 💜</button>
+        <button class="pay-btn" style="background:#f1f5f9" onclick="closeModal()">إلغاء</button>
+    </div>
+</div>
+
+<a href="https://wa.me/21651523420" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:32px">
+</a>
+
+<script>
+    function searchProducts() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+            cards[i].style.display = title.includes(input) ? "" : "none";
         }
-        window.onload = function () {
-            var twoHours = 60 * 60 * 2,
-            display = document.querySelector('#timer1');
-            startTimer(twoHours, display);
-        };
-    </script>
+    }
+
+    let pName = "", pPrice = "";
+    function openModal(name, selectId) {
+        pName = name; pPrice = document.getElementById(selectId).value;
+        document.getElementById('modalTitle').innerText = "شحن " + name;
+        document.getElementById('modalOffer').innerText = "العرض: " + pPrice;
+        document.getElementById('paymentModal').style.display = 'block';
+    }
+    function closeModal() { document.getElementById('paymentModal').style.display = 'none'; }
+
+    function pay(method) {
+        let msg = `سلام Click-TN، نحب نخلص ${pName} (${pPrice}) عن طريق ${method}`;
+        window.open(`https://wa.me/21651523420?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function startTimer(duration, display) {
+        var timer = duration, h, m, s;
+        setInterval(function () {
+            h = parseInt(timer / 3600, 10); m = parseInt((timer % 3600) / 60, 10); s = parseInt(timer % 60, 10);
+            display.textContent = "تنتهي التخفيضات: " + (h<10?"0":"")+h+":"+(m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+            if (--timer < 0) timer = duration;
+        }, 1000);
+    }
+    window.onload = function () { startTimer(60 * 60 * 3, document.querySelector('#timer')); };
+</script>
 
 </body>
 </html>
