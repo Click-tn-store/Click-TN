@@ -22,7 +22,7 @@
             margin: 0; 
             text-align: center;
             overflow-x: hidden;
-            padding-bottom: 50px;
+            padding-bottom: 70px;
         }
 
         .trust-bar {
@@ -91,7 +91,7 @@
         }
 
         .card-image-box { width: 100%; height: 140px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
-        .card-image-box img { width: 80%; height: 80%; object-fit: contain; }
+        .card-image-box img { width: 85%; height: 85%; object-fit: contain; }
 
         .info { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
         .info h3 { font-size: 0.9rem; margin: 0 0 10px; height: 38px; overflow: hidden; }
@@ -102,9 +102,9 @@
         .btn { background: #1e293b; color: white; width: 100%; padding: 10px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; font-size: 0.85rem; }
 
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
-        .modal-content { background: white; margin: 20% auto; padding: 25px; border-radius: 20px; width: 85%; max-width: 380px; }
+        .modal-content { background: white; margin: 20% auto; padding: 25px; border-radius: 20px; width: 85%; max-width: 380px; text-align: center;}
         .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; }
-        .d17 { background: #ffcc00; } .flouci { background: #6c5ce7; color: white; }
+        .d17 { background: #ffcc00; color: black;} .flouci { background: #6c5ce7; color: white; }
 
         .whatsapp-float { position: fixed; bottom: 20px; left: 20px; background: var(--success); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 3000; }
     </style>
@@ -112,7 +112,7 @@
 <body>
 
 <div class="trust-bar">
-    <marquee behavior="scroll" direction="right" scrollamount="6">🚀 شحن فوري لجميع الألعاب والخدمات الرقمية | ⚡ التنفيذ في أقل من 10 دقائق | ✅ ضمان 100%</marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="6">🚀 شحن فوري وآمن | ⚡ تنفيذ فوري | ✅ ضمان 100% | تونس 🇹🇳</marquee>
 </div>
 
 <header>
@@ -120,21 +120,21 @@
 </header>
 
 <div class="search-container">
-    <input type="text" id="searchInput" class="search-bar" placeholder="🔍 ابحث عن العرض الذي تريده..." onkeyup="searchProducts()">
+    <input type="text" id="searchInput" class="search-bar" placeholder="🔍 ابحث هنا عن العرض..." onkeyup="searchProducts()">
 </div>
 
 <div class="container" id="productsContainer">
     
     <div class="card">
-        <span class="badge">الأكثر طلباً 🔥</span>
+        <span class="badge">تخفيض 🔥</span>
         <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/en/a/af/Free_Fire_Logo.png"></div>
         <div class="info">
             <h3>جواهر فري فاير (ID)</h3>
-            <div class="timer-box" id="timer">تنتهي التخفيضات: 02:30:00</div>
+            <div class="timer-box" id="timer">ينتهي العرض: 02:45:00</div>
             <select id="ff-opt">
+                <option value="100 جوهرة بـ 4.500 DT">100 جوهرة - 4.500 DT</option>
                 <option value="570 جوهرة بـ 16.500 DT">570 جوهرة - 16.500 DT</option>
                 <option value="1140 جوهرة بـ 32.000 DT">1140 جوهرة - 32.000 DT</option>
-                <option value="2400 جوهرة بـ 65.000 DT">2400 جوهرة - 65.000 DT</option>
             </select>
             <button class="btn" onclick="openModal('فري فاير', 'ff-opt')">اشحن الآن</button>
         </div>
@@ -177,46 +177,24 @@
     </div>
 
     <div class="card">
-        <div class="card-image-box"><img src="https://seeklogo.com/images/E/efootball-logo-88C15409E3-seeklogo.com.png"></div>
-        <div class="info">
-            <h3>eFootball 2024 Coins</h3>
-            <select id="ef-opt">
-                <option value="تواصل للمزيد من العروض">عروض متغيرة يومياً</option>
-            </select>
-            <button class="btn" onclick="openModal('إيفوتبول', 'ef-opt')">طلب العرض</button>
-        </div>
-    </div>
-
-    <div class="card">
         <div class="card-image-box"><img src="https://img.icons8.com/color/512/visa.png"></div>
         <div class="info">
-            <h3>شحن RedotPay / بطاقات</h3>
+            <h3>شحن RedotPay (Visa)</h3>
             <select id="red-opt">
-                <option value="شحن رصيد الكارت">شحن رصيد مباشر</option>
+                <option value="شحن 10 دولار بـ 35.000 DT">شحن 10$ - 35.000 DT</option>
             </select>
             <button class="btn" onclick="openModal('ريدوت باي', 'red-opt')">اشحن الآن</button>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"></div>
-        <div class="info">
-            <h3>اشتراكات Netflix Premium</h3>
-            <select id="nf-opt">
-                <option value="شهر واحد بـ 15.000 DT">شهر واحد - 15.000 DT</option>
-            </select>
-            <button class="btn" onclick="openModal('نتفليكس', 'nf-opt')">اشتراك</button>
-        </div>
-    </div>
-
-    <div class="card">
         <div class="card-image-box"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Poste_Tunisie_%28logo%29.svg"></div>
         <div class="info">
-            <h3>خلاص فواتير / تحويل D17</h3>
+            <h3>فواتير / D17 / Flouci</h3>
             <select id="bill-opt">
-                <option value="خدمة تحويل / خلاص فواتير">خدمة سريعة</option>
+                <option value="خدمة سريعة">تحويل أو خلاص فاتورة</option>
             </select>
-            <button class="btn" onclick="openModal('خدمات بريدية', 'bill-opt')">تواصل معنا</button>
+            <button class="btn" onclick="openModal('خدمات مالية', 'bill-opt')">تواصل معنا</button>
         </div>
     </div>
 
@@ -225,14 +203,14 @@
 <div id="paymentModal" class="modal">
     <div class="modal-content">
         <h3 id="modalTitle"></h3>
-        <p id="modalOffer" style="font-size: 0.9rem; color: #64748b;"></p>
+        <p id="modalOffer" style="margin: 15px 0; color: #64748b; font-weight: bold;"></p>
         <button class="pay-btn d17" onclick="pay('D17')">دفع عبر D17 💳</button>
         <button class="pay-btn flouci" onclick="pay('Flouci')">دفع عبر Flouci 💜</button>
-        <button class="pay-btn" style="background:#f1f5f9" onclick="closeModal()">إلغاء</button>
+        <button class="pay-btn" style="background:#f1f5f9; color: #1e293b;" onclick="closeModal()">إلغاء</button>
     </div>
 </div>
 
-<a href="https://wa.me/21651523420" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/21646326474" class="whatsapp-float" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:32px">
 </a>
 
@@ -256,19 +234,19 @@
     function closeModal() { document.getElementById('paymentModal').style.display = 'none'; }
 
     function pay(method) {
-        let msg = `سلام Click-TN، نحب نخلص ${pName} (${pPrice}) عن طريق ${method}`;
-        window.open(`https://wa.me/21651523420?text=${encodeURIComponent(msg)}`, '_blank');
+        let msg = `سلام Click-TN، نحب نطلب ${pName} (${pPrice}) عن طريق ${method}`;
+        window.open(`https://wa.me/21646326474?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     function startTimer(duration, display) {
         var timer = duration, h, m, s;
         setInterval(function () {
             h = parseInt(timer / 3600, 10); m = parseInt((timer % 3600) / 60, 10); s = parseInt(timer % 60, 10);
-            display.textContent = "تنتهي التخفيضات: " + (h<10?"0":"")+h+":"+(m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+            display.textContent = "ينتهي العرض: " + (h<10?"0":"")+h+":"+(m<10?"0":"")+m+":"+(s<10?"0":"")+s;
             if (--timer < 0) timer = duration;
         }, 1000);
     }
-    window.onload = function () { startTimer(60 * 60 * 3, document.querySelector('#timer')); };
+    window.onload = function () { startTimer(60 * 60 * 4, document.querySelector('#timer')); };
 </script>
 
 </body>
