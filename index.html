@@ -4,62 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click-TN Store | المتجر المتكامل 🇹🇳</title>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
             --primary: #e94560; 
-            --bg: #0f172a; 
-            --card: rgba(30, 41, 59, 0.7); 
+            --bg: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
             --success: #25d366; 
+            --border: #e2e8f0;
         }
 
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Tajawal', sans-serif; 
             background-color: var(--bg); 
-            color: white; 
+            color: var(--text-main); 
             margin: 0; 
             text-align: center;
-            overflow-x: hidden;
         }
 
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0; left: 0;
-            z-index: -1;
-            background: linear-gradient(135deg, #0f172a 0%, #16213e 100%);
-        }
-
-        /* شريط الثقة */
         .trust-bar {
-            background: var(--primary);
+            background: #1e293b;
             color: white;
             padding: 10px 0;
             font-size: 0.9rem;
             font-weight: bold;
         }
 
-        /* الهيدر المضيء */
         header { 
-            padding: 60px 20px; 
-            background: radial-gradient(circle, rgba(233, 69, 96, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
-            backdrop-filter: blur(10px);
+            padding: 40px 20px; 
+            background: white;
             border-bottom: 2px solid var(--primary);
         }
 
-        .logo { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
-        .logo .white { color: white; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
-        .logo .neon { color: var(--primary); text-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary); }
+        .logo { font-size: 2.5rem; font-weight: 900; }
+        .logo .blue { color: var(--primary); }
 
-        .hero-title { font-size: 1.6rem; margin: 20px 0; animation: pulse 2s infinite; }
-
-        .trust-badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
-        .badge { background: rgba(255,255,255,0.1); padding: 6px 18px; border-radius: 50px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.2); }
-
-        /* حاوية المنتجات */
         .container { 
-            padding: 40px 15px; 
+            padding: 30px 15px; 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 25px; 
@@ -68,57 +50,51 @@
         }
 
         .card { 
-            background: var(--card); 
-            backdrop-filter: blur(12px);
+            background: var(--card-bg); 
             border-radius: 20px; 
             overflow: hidden; 
-            transition: 0.4s ease; 
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(233, 69, 96, 0.3); }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-        .card-image-box { width: 100%; height: 200px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
+        .card-image-box { width: 100%; height: 200px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
         .card-image-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .info { padding: 15px; }
-        select { width: 90%; padding: 12px; border-radius: 10px; margin-bottom: 15px; background: #0f172a; color: white; border: 1px solid #334155; }
-        .btn { background: var(--primary); color: white; width: 90%; padding: 12px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
-        .btn:hover { box-shadow: 0 0 15px var(--primary); transform: scale(1.05); }
+        .info { padding: 20px; text-align: right; }
+        .info h3 { margin: 0 0 15px 0; font-size: 1.1rem; }
 
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
-        .modal-content { background: #1e293b; margin: 15% auto; padding: 25px; border-radius: 15px; width: 85%; max-width: 350px; border: 1px solid var(--primary); }
-        .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; }
-        .d17 { background: #ffcc00; color: #000; }
-        .flouci { background: #6c5ce7; color: #fff; }
+        select { width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 15px; background: #f8fafc; border: 1px solid var(--border); font-family: 'Tajawal'; }
+        
+        .btn { background: #1e293b; color: white; width: 100%; padding: 14px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: var(--primary); }
 
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: var(--success); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 35px; z-index: 1000; }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
+        .modal-content { background: white; margin: 15% auto; padding: 25px; border-radius: 20px; width: 85%; max-width: 350px; text-align: center; }
+        .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; }
+        .d17 { background: #ffcc00; color: black; }
+        .flouci { background: #6c5ce7; color: white; }
 
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background: var(--success); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
-
 <div class="trust-bar">
-    <marquee behavior="scroll" direction="right" scrollamount="7">
-        🚀 شحن فوري وآمن لجميع الألعاب والخدمات الرقمية في تونس 🇹🇳 | ⚡ تنفيذ الطلبات في أقل من 5 دقائق | ✅ ضمان 100%
-    </marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="7">🚀 شحن فوري وآمن لجميع الألعاب والخدمات الرقمية في تونس 🇹🇳 | تنفيذ الطلبات في أقل من 5 دقائق | ✅ ضمان 100%</marquee>
 </div>
 
 <header>
-    <div class="logo"><span class="white">Click-</span><span class="neon">TN</span> <span class="white">Store</span></div>
-    <h2 class="hero-title">اشحن ألعابك المفضلة الآن بضغطة زر! 🎮</h2>
-    <div class="trust-badges">
-        <div class="badge">⭐ موثوق 100%</div>
-        <div class="badge">⚡ شحن فوري</div>
-        <div class="badge">📞 دعم 24/7</div>
-    </div>
+    <div class="logo">Click-<span class="blue">TN</span> Store</div>
+    <p style="color: #64748b;">متجرك المتكامل لشحن الألعاب والخدمات</p>
 </header>
 
 <div class="container">
+    
     <div class="card">
         <div class="card-image-box"><img src="cb415333-7c59-478c-86d6-8ef7f233c30c.jfif"></div>
         <div class="info">
@@ -169,6 +145,19 @@
     </div>
 
     <div class="card">
+        <div class="card-image-box"><img src="https://img.icons8.com/fluency/96/wifi.png"></div>
+        <div class="info">
+            <h3>أوريدو إنترنات (Ooredoo) 🌐</h3>
+            <select id="ooredoo-options">
+                <option value="25Go بـ 30.000 DT">25Go - 30.000 DT</option>
+                <option value="55Go بـ 50.000 DT">55Go - 50.000 DT</option>
+                <option value="100Go بـ 85.000 DT">100Go - 85.000 DT</option>
+            </select>
+            <button onclick="openModal('أوريدو إنترنات', 'ooredoo-options')" class="btn">تفعيل سريع</button>
+        </div>
+    </div>
+
+    <div class="card">
         <div class="card-image-box"><img src="079e3e56-4cdf-4410-adb1-df98021b8d7b.jfif"></div>
         <div class="info">
             <h3>RedotPay 💳</h3>
@@ -186,7 +175,7 @@
     <div class="card">
         <div class="card-image-box"><img src="e9567608-5616-499a-b455-61ca388aeb74.jfif"></div>
         <div class="info">
-            <h3>Binance (توفير رصيد) 💰</h3>
+            <h3>Binance (USDT) 💰</h3>
             <select id="binance-options">
                 <option value="10$ بـ 36.000 DT">10$ - 36.000 DT</option>
                 <option value="20$ بـ 72.000 DT">20$ - 72.000 DT</option>
@@ -217,7 +206,7 @@
     <div class="card">
         <div class="card-image-box"><img src="8eb93408-e3ab-4794-8cbb-453014dced62.jfif"></div>
         <div class="info">
-            <h3>Melbet (رهان $ / €) 🎲</h3>
+            <h3>Melbet (رهان) 🎲</h3>
             <select id="melbet-options">
                 <option value="رهان 10$ بـ 36.000 DT">10$ - 36.000 DT</option>
                 <option value="رهان 20$ بـ 72.000 DT">20$ - 72.000 DT</option>
@@ -268,41 +257,38 @@
             <button onclick="openModal('تيك توك', 'tiktok-options')" class="btn">شحن الآن</button>
         </div>
     </div>
+
 </div>
 
 <div id="paymentModal" class="modal">
     <div class="modal-content">
-        <h3>اختر وسيلة الدفع</h3>
+        <h3 id="mTitle">اختر وسيلة الدفع</h3>
+        <p id="mOffer" style="color: #64748b; margin-bottom: 15px; font-size: 0.9rem;"></p>
         <button onclick="sendOrder('D17')" class="pay-btn d17">D17 💳</button>
         <button onclick="sendOrder('Flouci')" class="pay-btn flouci">Flouci 📱</button>
-        <button onclick="closeModal()" style="background:none; color:white; border:none; margin-top:15px; cursor:pointer;">إلغاء</button>
+        <button onclick="closeModal()" style="background:none; color:#64748b; border:none; margin-top:10px; cursor:pointer;">إلغاء</button>
     </div>
 </div>
 
 <a href="https://wa.me/21646326474" class="whatsapp-float">💬</a>
 
 <script>
-    particlesJS("particles-js", {
-        "particles": {
-            "number": { "value": 70 },
-            "color": { "value": "#e94560" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5 },
-            "size": { "value": 3 },
-            "line_linked": { "enable": true, "distance": 150, "color": "#e94560", "opacity": 0.3, "width": 1 },
-            "move": { "enable": true, "speed": 2 }
-        },
-        "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" } } }
-    });
-
-    let cP = ""; let cO = "";
-    function openModal(p, s) { cP = p; cO = document.getElementById(s).value; document.getElementById("paymentModal").style.display = "block"; }
+    let currentP = ""; let currentO = "";
+    function openModal(p, s) { 
+        currentP = p; 
+        currentO = document.getElementById(s).value; 
+        document.getElementById("mTitle").innerText = "طلب " + p;
+        document.getElementById("mOffer").innerText = "العرض: " + currentO;
+        document.getElementById("paymentModal").style.display = "block"; 
+    }
     function closeModal() { document.getElementById("paymentModal").style.display = "none"; }
+    
     function sendOrder(m) {
-        let msg = "مرحباً Click-TN Store 👋\nالمنتج: " + cP + "\nالعرض: " + cO + "\nالدفع: " + m;
+        let msg = "مرحباً Click-TN Store 👋\nالمنتج: " + currentP + "\nالعرض: " + currentO + "\nالدفع: " + m;
         window.open("https://wa.me/21646326474?text=" + encodeURIComponent(msg), '_blank');
         closeModal();
     }
+    
     function directOrder(p) {
         let msg = "مرحباً Click-TN Store 👋\nأريد الشراء من منصة: " + p;
         window.open("https://wa.me/21646326474?text=" + encodeURIComponent(msg), '_blank');
