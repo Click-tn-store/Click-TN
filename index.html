@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click-TN Store | المتجر المتكامل 🇹🇳</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
             --primary: #e94560; 
-            --bg: #f8fafc; 
+            --bg: #f4f7fa; 
             --card-bg: #ffffff;
             --text-main: #1e293b;
+            --text-dim: #64748b;
             --success: #25d366; 
             --border: #e2e8f0;
         }
@@ -20,77 +21,113 @@
             background-color: var(--bg); 
             color: var(--text-main); 
             margin: 0; 
-            text-align: center;
-        }
-
-        .trust-bar {
-            background: #1e293b;
-            color: white;
-            padding: 10px 0;
-            font-size: 0.9rem;
-            font-weight: bold;
+            padding-bottom: 40px;
         }
 
         header { 
             padding: 40px 20px; 
             background: white;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        .logo { font-size: 2.5rem; font-weight: 900; }
-        .logo .blue { color: var(--primary); }
+        .logo { font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
 
         .container { 
-            padding: 30px 15px; 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
             gap: 25px; 
             max-width: 1200px; 
-            margin: auto; 
+            margin: 0 auto; 
+            padding: 0 20px;
         }
 
+        /* تصميم الخانة الاحترافي المعدل */
         .card { 
             background: var(--card-bg); 
             border-radius: 20px; 
-            overflow: hidden; 
             border: 1px solid var(--border);
-            transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
 
-        .card-image-box { width: 100%; height: 200px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; }
-        .card-image-box img { width: 100%; height: 100%; object-fit: cover; }
+        .card-image-box { 
+            width: 100%; 
+            height: 200px; 
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
 
-        .info { padding: 20px; text-align: right; }
-        .info h3 { margin: 0 0 15px 0; font-size: 1.1rem; }
+        .card-image-box img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
 
-        select { width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 15px; background: #f8fafc; border: 1px solid var(--border); font-family: 'Tajawal'; }
-        
-        .btn { background: #1e293b; color: white; width: 100%; padding: 14px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: var(--primary); }
+        .info { padding: 20px; text-align: center; }
+        .info h3 { margin: 0 0 15px 0; font-size: 1.2rem; font-weight: 700; color: #334155; }
 
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
-        .modal-content { background: white; margin: 15% auto; padding: 25px; border-radius: 20px; width: 85%; max-width: 350px; text-align: center; }
-        .pay-btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; }
+        select { 
+            width: 100%; 
+            padding: 12px; 
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+            background: #f8fafc; 
+            border: 2px solid #f1f5f9; 
+            font-family: 'Tajawal';
+            font-weight: 500;
+            outline: none;
+        }
+
+        .btn { 
+            background: #1e293b;
+            color: white; 
+            width: 100%; 
+            padding: 14px; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            border: none; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+
+        .btn:hover { background: var(--primary); transform: scale(1.02); }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+        .modal-content { background: white; margin: 15% auto; padding: 30px; border-radius: 25px; width: 85%; max-width: 380px; text-align: center; }
+        .pay-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; font-size: 1rem; }
         .d17 { background: #ffcc00; color: black; }
         .flouci { background: #6c5ce7; color: white; }
 
-        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background: var(--success); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .whatsapp-float { 
+            position: fixed; bottom: 25px; left: 25px; 
+            background: var(--success); width: 60px; height: 60px; 
+            border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; text-decoration: none; 
+            font-size: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
 
-<div class="trust-bar">
-    <marquee behavior="scroll" direction="right" scrollamount="7">🚀 شحن فوري وآمن لجميع الألعاب والخدمات الرقمية في تونس 🇹🇳 | تنفيذ الطلبات في أقل من 5 دقائق | ✅ ضمان 100%</marquee>
-</div>
-
 <header>
-    <div class="logo">Click-<span class="blue">TN</span> Store</div>
-    <p style="color: #64748b;">متجرك المتكامل لشحن الألعاب والخدمات</p>
+    <div class="logo">Click-<span>TN</span> Store</div>
+    <p style="color: var(--text-dim);">متجرك الموثوق لشحن الألعاب والخدمات الرقمية في تونس 🇹🇳</p>
 </header>
 
 <div class="container">
@@ -114,7 +151,7 @@
     <div class="card">
         <div class="card-image-box"><img src="836befd9-172d-4758-864d-0cf6133ee6d2.jfif"></div>
         <div class="info">
-            <h3>ببجي موبايل (UC)</h3>
+            <h3>شدات ببجي موبايل (UC)</h3>
             <select id="pubg-options">
                 <option value="60 UC بـ 3.200 DT">60 UC - 3.200 DT</option>
                 <option value="325 UC بـ 17.000 DT">325 UC - 17.000 DT</option>
@@ -130,7 +167,7 @@
     <div class="card">
         <div class="card-image-box"><img src="115821d3-d878-458f-b7cc-c09b2befd34d.jfif"></div>
         <div class="info">
-            <h3>فري فاير (💎)</h3>
+            <h3>جواهر فري فاير (💎)</h3>
             <select id="ff-options">
                 <option value="100 جوهرة بـ 3.500 DT">100 جوهرة - 3.500 DT</option>
                 <option value="210 جوهرة بـ 7.500 DT">210 جوهرة - 7.500 DT</option>
@@ -147,13 +184,13 @@
     <div class="card">
         <div class="card-image-box"><img src="https://img.icons8.com/fluency/96/wifi.png"></div>
         <div class="info">
-            <h3>أوريدو إنترنات (Ooredoo) 🌐</h3>
+            <h3>أوريدو إنترنات (Ooredoo)</h3>
             <select id="ooredoo-options">
                 <option value="25Go بـ 30.000 DT">25Go - 30.000 DT</option>
                 <option value="55Go بـ 50.000 DT">55Go - 50.000 DT</option>
                 <option value="100Go بـ 85.000 DT">100Go - 85.000 DT</option>
             </select>
-            <button onclick="openModal('أوريدو إنترنات', 'ooredoo-options')" class="btn">تفعيل سريع</button>
+            <button onclick="openModal('أنترنات أوريدو', 'ooredoo-options')" class="btn">تفعيل سريع</button>
         </div>
     </div>
 
@@ -262,37 +299,35 @@
 
 <div id="paymentModal" class="modal">
     <div class="modal-content">
-        <h3 id="mTitle">اختر وسيلة الدفع</h3>
-        <p id="mOffer" style="color: #64748b; margin-bottom: 15px; font-size: 0.9rem;"></p>
-        <button onclick="sendOrder('D17')" class="pay-btn d17">D17 💳</button>
-        <button onclick="sendOrder('Flouci')" class="pay-btn flouci">Flouci 📱</button>
-        <button onclick="closeModal()" style="background:none; color:#64748b; border:none; margin-top:10px; cursor:pointer;">إلغاء</button>
+        <h3 id="mTitle" style="margin-bottom:10px;"></h3>
+        <p id="mOffer" style="color:var(--text-dim); margin-bottom:20px;"></p>
+        <button onclick="sendOrder('D17')" class="pay-btn d17">دفع عبر D17 💳</button>
+        <button onclick="sendOrder('Flouci')" class="pay-btn flouci">دفع عبر Flouci 📱</button>
+        <button onclick="closeModal()" style="background:none; border:none; color:var(--text-dim); margin-top:10px; cursor:pointer;">إلغاء</button>
     </div>
 </div>
 
-<a href="https://wa.me/21646326474" class="whatsapp-float">💬</a>
+<a href="https://wa.me/21646326474" class="whatsapp-float">🟢</a>
 
 <script>
-    let currentP = ""; let currentO = "";
+    let cp = ""; let co = "";
     function openModal(p, s) { 
-        currentP = p; 
-        currentO = document.getElementById(s).value; 
+        cp = p; co = document.getElementById(s).value; 
         document.getElementById("mTitle").innerText = "طلب " + p;
-        document.getElementById("mOffer").innerText = "العرض: " + currentO;
+        document.getElementById("mOffer").innerText = "العرض: " + co;
         document.getElementById("paymentModal").style.display = "block"; 
     }
     function closeModal() { document.getElementById("paymentModal").style.display = "none"; }
-    
     function sendOrder(m) {
-        let msg = "مرحباً Click-TN Store 👋\nالمنتج: " + currentP + "\nالعرض: " + currentO + "\nالدفع: " + m;
+        let msg = "سلام Click-TN 👋\nنحب نطلب: " + cp + "\nالعرض: " + co + "\nالدفع: " + m;
         window.open("https://wa.me/21646326474?text=" + encodeURIComponent(msg), '_blank');
         closeModal();
     }
-    
     function directOrder(p) {
-        let msg = "مرحباً Click-TN Store 👋\nأريد الشراء من منصة: " + p;
+        let msg = "سلام Click-TN 👋\nأريد الطلب من منصة: " + p;
         window.open("https://wa.me/21646326474?text=" + encodeURIComponent(msg), '_blank');
     }
 </script>
+
 </body>
 </html>
