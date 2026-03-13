@@ -8,7 +8,8 @@
     <style>
         :root { 
             --primary: #e94560; 
-            --bg: #f4f7fa; 
+            --navy: #1e293b; 
+            --bg: #f8fafc; 
             --card-bg: #ffffff;
             --text-main: #1e293b;
             --text-dim: #64748b;
@@ -21,19 +22,19 @@
             background-color: var(--bg); 
             color: var(--text-main); 
             margin: 0; 
-            padding-bottom: 40px;
+            padding-bottom: 50px;
         }
 
         header { 
             padding: 40px 20px; 
             background: white;
-            border-bottom: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .logo { font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; }
-        .logo span { color: var(--primary); }
+        .logo-container { font-size: 2.5rem; font-weight: 900; }
+        .logo-tn { color: var(--primary); }
 
         .container { 
             display: grid; 
@@ -44,90 +45,67 @@
             padding: 0 20px;
         }
 
-        /* تصميم الخانة الاحترافي المعدل */
+        /* تصميم الخانة مثل الصورة تماماً */
         .card { 
             background: var(--card-bg); 
             border-radius: 20px; 
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: 0.3s;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        .card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--primary); }
 
-        .card-image-box { 
-            width: 100%; 
-            height: 200px; 
-            background: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .card-image-box img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-        }
+        .card-image-box { width: 100%; height: 220px; background: white; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .card-image-box img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; }
 
         .info { padding: 20px; text-align: center; }
-        .info h3 { margin: 0 0 15px 0; font-size: 1.2rem; font-weight: 700; color: #334155; }
+        .info h3 { margin: 0 0 15px 0; font-size: 1.15rem; color: var(--navy); font-weight: 700; }
 
         select { 
             width: 100%; 
             padding: 12px; 
-            border-radius: 12px; 
+            border-radius: 10px; 
             margin-bottom: 15px; 
-            background: #f8fafc; 
-            border: 2px solid #f1f5f9; 
+            background: #f1f5f9; 
+            border: 1px solid var(--border); 
             font-family: 'Tajawal';
             font-weight: 500;
-            outline: none;
         }
 
         .btn { 
-            background: #1e293b;
+            background: var(--navy); 
             color: white; 
             width: 100%; 
-            padding: 14px; 
+            padding: 15px; 
             border-radius: 12px; 
             font-weight: 700; 
             border: none; 
             cursor: pointer; 
             transition: 0.3s;
+            font-size: 1rem;
         }
 
-        .btn:hover { background: var(--primary); transform: scale(1.02); }
+        .btn:hover { background: var(--primary); }
 
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+        /* نافذة الدفع */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
         .modal-content { background: white; margin: 15% auto; padding: 30px; border-radius: 25px; width: 85%; max-width: 380px; text-align: center; }
-        .pay-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; font-size: 1rem; }
-        .d17 { background: #ffcc00; color: black; }
+        .pay-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; }
+        .d17 { background: #ffcc00; }
         .flouci { background: #6c5ce7; color: white; }
 
-        .whatsapp-float { 
-            position: fixed; bottom: 25px; left: 25px; 
-            background: var(--success); width: 60px; height: 60px; 
-            border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; text-decoration: none; 
-            font-size: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
+        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background: var(--success); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 35px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">Click-<span>TN</span> Store</div>
-    <p style="color: var(--text-dim);">متجرك الموثوق لشحن الألعاب والخدمات الرقمية في تونس 🇹🇳</p>
+    <div class="logo-container">Click-<span class="logo-tn">TN</span> STORE</div>
+    <p style="color: var(--text-dim);">متجرك الموثوق لشحن الألعاب والخدمات في تونس</p>
 </header>
 
 <div class="container">
@@ -160,7 +138,7 @@
                 <option value="3850 UC بـ 164.000 DT">3850 UC - 164.000 DT</option>
                 <option value="8100 UC بـ 310.000 DT">8100 UC - 310.000 DT</option>
             </select>
-            <button onclick="openModal('ببجي موبايل', 'pubg-options')" class="btn">شحن الآن</button>
+            <button onclick="openModal('ببجي موبايل', 'pubg-options')" class="btn">اشحن الآن</button>
         </div>
     </div>
 
@@ -177,12 +155,12 @@
                 <option value="Weekly Lite بـ 8.000 DT">Weekly Lite - 8.000 DT</option>
                 <option value="Monthly بـ 35.000 DT">Monthly - 35.000 DT</option>
             </select>
-            <button onclick="openModal('فري فاير', 'ff-options')" class="btn">شحن الآن</button>
+            <button onclick="openModal('فري فاير', 'ff-options')" class="btn">اشحن الآن</button>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-image-box"><img src="https://img.icons8.com/fluency/96/wifi.png"></div>
+        <div class="card-image-box"><img src="https://img.icons8.com/fluency/144/wifi.png"></div>
         <div class="info">
             <h3>أوريدو إنترنات (Ooredoo)</h3>
             <select id="ooredoo-options">
@@ -190,7 +168,7 @@
                 <option value="55Go بـ 50.000 DT">55Go - 50.000 DT</option>
                 <option value="100Go بـ 85.000 DT">100Go - 85.000 DT</option>
             </select>
-            <button onclick="openModal('أنترنات أوريدو', 'ooredoo-options')" class="btn">تفعيل سريع</button>
+            <button onclick="openModal('أوريدو', 'ooredoo-options')" class="btn">تفعيل الباقة</button>
         </div>
     </div>
 
@@ -202,8 +180,7 @@
                 <option value="شحن 5$ بـ 18.500 DT">شحن 5$ - 18.500 DT</option>
                 <option value="شحن 10$ بـ 36.500 DT">شحن 10$ - 36.500 DT</option>
                 <option value="شحن 20$ بـ 72.000 DT">شحن 20$ - 72.000 DT</option>
-                <option value="شحن 50$ بـ 178.000 DT">شحن 50$ - 178.000 DT</option>
-                <option value="طلب بطاقة افتراضية بـ 38.000 DT">طلب بطاقة افتراضية - 38.000 DT</option>
+                <option value="طلب بطاقة بـ 38.000 DT">طلب بطاقة - 38.000 DT</option>
             </select>
             <button onclick="openModal('RedotPay', 'redotpay-options')" class="btn">اطلب الآن</button>
         </div>
@@ -216,11 +193,9 @@
             <select id="binance-options">
                 <option value="10$ بـ 36.000 DT">10$ - 36.000 DT</option>
                 <option value="20$ بـ 72.000 DT">20$ - 72.000 DT</option>
-                <option value="50$ بـ 180.000 DT">50$ - 180.000 DT</option>
                 <option value="100$ بـ 360.000 DT">100$ - 360.000 DT</option>
-                <option value="500$ بـ 1800.000 DT">500$ - 1800.000 DT</option>
             </select>
-            <button onclick="openModal('Binance', 'binance-options')" class="btn">اطلب الآن</button>
+            <button onclick="openModal('Binance', 'binance-options')" class="btn">اشحن رصيدك</button>
         </div>
     </div>
 
@@ -231,24 +206,19 @@
             <select id="efootball-options">
                 <option value="315 coin بـ 9.800 DT">315 coin - 9.800 DT</option>
                 <option value="1092 coin بـ 31.700 DT">1092 coin - 31.700 DT</option>
-                <option value="2237 coin بـ 64.800 DT">2237 coin - 64.800 DT</option>
-                <option value="3413 coin بـ 97.500 DT">3413 coin - 97.500 DT</option>
                 <option value="5985 coin بـ 158.500 DT">5985 coin - 158.500 DT</option>
-                <option value="13440 coin بـ 338.500 DT">13440 coin - 338.500 DT</option>
             </select>
-            <button onclick="openModal('eFootball', 'efootball-options')" class="btn">شحن الآن</button>
+            <button onclick="openModal('eFootball', 'efootball-options')" class="btn">اشحن الآن</button>
         </div>
     </div>
 
     <div class="card">
         <div class="card-image-box"><img src="8eb93408-e3ab-4794-8cbb-453014dced62.jfif"></div>
         <div class="info">
-            <h3>Melbet (رهان) 🎲</h3>
+            <h3>Melbet 🎲</h3>
             <select id="melbet-options">
-                <option value="رهان 10$ بـ 36.000 DT">10$ - 36.000 DT</option>
-                <option value="رهان 20$ بـ 72.000 DT">20$ - 72.000 DT</option>
-                <option value="رهان 50$ بـ 180.000 DT">50$ - 180.000 DT</option>
-                <option value="رهان 100$ بـ 360.000 DT">100$ - 360.000 DT</option>
+                <option value="10$ بـ 36.000 DT">10$ - 36.000 DT</option>
+                <option value="50$ بـ 180.000 DT">50$ - 180.000 DT</option>
             </select>
             <button onclick="openModal('Melbet', 'melbet-options')" class="btn">اشحن الآن</button>
         </div>
@@ -260,8 +230,6 @@
             <h3>عملة USDT 💵</h3>
             <select id="usdt-options">
                 <option value="10 USDT بـ 34.500 DT">10 USDT - 34.500 DT</option>
-                <option value="20 USDT بـ 70.000 DT">20 USDT - 70.000 DT</option>
-                <option value="50 USDT بـ 175.500 DT">50 USDT - 175.500 DT</option>
                 <option value="100 USDT بـ 345.000 DT">100 USDT - 345.000 DT</option>
             </select>
             <button onclick="openModal('USDT', 'usdt-options')" class="btn">اطلب الآن</button>
@@ -273,9 +241,8 @@
         <div class="info">
             <h3>نتفليكس (🎬)</h3>
             <select id="netflix-options">
-                <option value="حساب مشترك شهر بـ 15.000 DT">حساب مشترك (شهر) - 15.000 DT</option>
-                <option value="بروفايل خاص شهر بـ 25.000 DT">بروفايل خاص (شهر) - 25.000 DT</option>
-                <option value="حساب كامل شهر بـ 60.000 DT">حساب كامل (شهر) - 60.000 DT</option>
+                <option value="حساب مشترك بـ 15.000 DT">مشترك (شهر) - 15.000 DT</option>
+                <option value="حساب كامل بـ 60.000 DT">كامل (شهر) - 60.000 DT</option>
             </select>
             <button onclick="openModal('نتفليكس', 'netflix-options')" class="btn">اشترك الآن</button>
         </div>
@@ -284,14 +251,13 @@
     <div class="card">
         <div class="card-image-box"><img src="6d6b53a6-9bab-4610-9ccc-03db3374c199.jfif"></div>
         <div class="info">
-            <h3>تيك توك (📱)</h3>
+            <h3>تيك توك Coins</h3>
             <select id="tiktok-options">
                 <option value="70 Coin بـ 4.000 DT">70 Coin - 4.000 DT</option>
-                <option value="350 Coin بـ 18.000 DT">350 Coin - 18.000 DT</option>
                 <option value="700 Coin بـ 35.000 DT">700 Coin - 35.000 DT</option>
                 <option value="3500 Coin بـ 165.000 DT">3500 Coin - 165.000 DT</option>
             </select>
-            <button onclick="openModal('تيك توك', 'tiktok-options')" class="btn">شحن الآن</button>
+            <button onclick="openModal('تيك توك', 'tiktok-options')" class="btn">اشحن الآن</button>
         </div>
     </div>
 
@@ -299,11 +265,11 @@
 
 <div id="paymentModal" class="modal">
     <div class="modal-content">
-        <h3 id="mTitle" style="margin-bottom:10px;"></h3>
-        <p id="mOffer" style="color:var(--text-dim); margin-bottom:20px;"></p>
-        <button onclick="sendOrder('D17')" class="pay-btn d17">دفع عبر D17 💳</button>
-        <button onclick="sendOrder('Flouci')" class="pay-btn flouci">دفع عبر Flouci 📱</button>
-        <button onclick="closeModal()" style="background:none; border:none; color:var(--text-dim); margin-top:10px; cursor:pointer;">إلغاء</button>
+        <h3 id="mTitle"></h3>
+        <p id="mOffer" style="margin-bottom:20px; color:var(--text-dim);"></p>
+        <button onclick="sendOrder('D17')" class="pay-btn d17">D17 💳</button>
+        <button onclick="sendOrder('Flouci')" class="pay-btn flouci">Flouci 📱</button>
+        <button onclick="closeModal()" style="background:none; border:none; color:var(--text-dim); margin-top:15px; cursor:pointer;">إلغاء</button>
     </div>
 </div>
 
@@ -314,7 +280,7 @@
     function openModal(p, s) { 
         cp = p; co = document.getElementById(s).value; 
         document.getElementById("mTitle").innerText = "طلب " + p;
-        document.getElementById("mOffer").innerText = "العرض: " + co;
+        document.getElementById("mOffer").innerText = co;
         document.getElementById("paymentModal").style.display = "block"; 
     }
     function closeModal() { document.getElementById("paymentModal").style.display = "none"; }
@@ -324,7 +290,7 @@
         closeModal();
     }
     function directOrder(p) {
-        let msg = "سلام Click-TN 👋\nأريد الطلب من منصة: " + p;
+        let msg = "سلام Click-TN 👋\nأريد الطلب من: " + p;
         window.open("https://wa.me/21646326474?text=" + encodeURIComponent(msg), '_blank');
     }
 </script>
